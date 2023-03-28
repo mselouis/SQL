@@ -1,0 +1,36 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY,apparel TEXT, price INTEGER, aisle INTEGER, material TEXT);
+INSERT INTO store VALUES (1,"pants", "20","10", "denim");
+INSERT INTO store VALUES (2, "blouses", "35", "6", "satin");
+INSERT INTO store VALUES (3,"t shirts", "5","3", "cotton");
+INSERT INTO store VALUES (4, "dresses", "15","2", "polyester");
+INSERT INTO store VALUES (5, "coats", "50", "7", "wool");
+INSERT INTO store VALUES (6, "sweaters", "30", "1", "cashmere");
+INSERT INTO store VALUES (7, "hoodies", "17", "4", "jersey knit");
+INSERT INTO store VALUES (8, "swimsuits", "23", "5", "spandex");
+INSERT INTO store VALUES (9, "intimates", "10", "8", "lace");
+INSERT INTO store VALUES (10,"hats", "13", "9", "knit");
+INSERT INTO store VALUES (11, "shoes", "40", "11", "suede");
+INSERT INTO store VALUES ( 12, "purse", "65", "12", "pleather");
+INSERT INTO store VALUES (13, "scarves", "11", "13","silk");
+INSERT INTO store VALUES (14, "belts", "23", "14", "leather");
+INSERT INTO store VALUES (15, "shorts", "32", "15", "nylon");
+SELECT * FROM store;
+
+
+Here i'm pulling the data for all the clothing items that cost less than or equal to $46
+
+SELECT * FROM store 
+WHERE price<=46
+ORDER BY price asc;
+
+Here I'm grabbing all the data from the clothing items that are in all the aisles before aisle 6. Now I am organizing that data by price ( most expensive to least) but limiting to the top 5. 
+SELECT * FROM store 
+Where aisle >6
+ORDER BY price desc
+LIMIT 5;
+
+Here I am pulling all the apparel items and how much they cost. Then I am pulling to get all the items that cost $25 or less. Then limiting it to 3.
+SELECT apparel, price
+FROM store
+WHERE price <=25
+limit 3;
